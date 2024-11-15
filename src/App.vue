@@ -1,25 +1,18 @@
 <template>
-    <!-- 라우터 -->
     <div class="container">
         <Header></Header>
         <div class="wrap">
-
-            <hr>
             <div class="checkbox-wrap">
-                <add-todo
+                <AddTodo
                     v-for="(todo, index) in todoList"
                     :key="index"
                     :id="todo.id"
                     :todoValue="todo.todoValue"
-                ></add-todo>
+                    @selected="handleTodoComplete"
+                ></AddTodo>
             </div>
         </div>
-        <AddTodoBtn @click="addTodoActive = !addTodoActive"></AddTodoBtn>
-        <!-- <AddInput
-            :class="{ active: addTodoActive, unactive: !addTodoActive }"
-            @update:addTodo="handleUpdateTodoList"
-        ></AddInput> -->
-
+        <AddTodoBtn @click="setAddTodoActive"></AddTodoBtn>
         <BottomSheet :activeStatus="addTodoActive">
             <FormInputWithLabel
                 placeholder="일단 입력하고 생각하기"
@@ -33,7 +26,6 @@
 import { ref } from 'vue';
 import Header from '@/components/common/HeaderLayout.vue';
 import AddTodo from '@/components/AddTodo.vue';
-// import AddInput from '@/components/AddInput.vue';
 import AddTodoBtn from '@/components/AddTodoBtn.vue';
 import BottomSheet from '@/components/common/BottomSheet.vue';
 
@@ -41,9 +33,15 @@ import FormInputWithLabel from '@/components/form/FormInputWithLabel.vue';
 import { usePKManager } from '@/composables/usePKManager';
 
 const addTodoActive = ref(false);
+const setAddTodoActive = () => {
+    addTodoActive.value = !addTodoActive.value;
+}
+
 const todoList = ref([]);
+const completeTodoList = ref([]);
 
 const { incrementPK, getPKValue } = usePKManager();
+
 const handleUpdateTodoList = (todoValue) => {
     incrementPK();
 
@@ -55,11 +53,24 @@ const handleUpdateTodoList = (todoValue) => {
     todoList.value = [...todoList.value, todoItem];
 };
 
+const handleTodoComplete = (id, todoValue) => {
+    const completeTodoItem = {
+        id,
+        todoValue
+    };
+
+    completeTodoList.value = [...completeTodoList.value, completeTodoItem];
+    removeTodoItemFromList(id, todoList);
+}
+
+const removeTodoItemFromList = (id, list) => {
+    list.value = list.value.filter(todo => todo.id !== id);
+}
+
 </script>
 
 
 <style lang="scss" scoped>
-// @import './assets/css/_variables.scss';
 .container {
     position: relative;
     width: 100%;
