@@ -1,13 +1,10 @@
 <template>
     <header>
-        <!-- TODO: title 을 h 태그가 아니라 p 태그를 사용 이유 -->
         <p>다 울었니? 이제 할 일을 하자</p>
     </header>
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/css/_variables.scss';
-
 header {
     height: 60px;
     color: $color-333;
