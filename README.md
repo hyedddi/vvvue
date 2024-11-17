@@ -2,10 +2,15 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Wiki for @hyedddi](#wiki-for-hyedddi)
-- [Prerequisites](#prerequisites)
-- [About](#about)
+- [📄 vvue](#-vvue)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Wiki for @hyedddi](#wiki-for-hyedddi)
+    - [Configuration](#configuration)
+    - [Javascript](#javascript)
+  - [Prerequisites](#prerequisites)
+    - [Frontend](#frontend)
+  - [About](#about)
 
 ## Introduction
 
