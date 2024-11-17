@@ -23,49 +23,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import Header from '@/components/common/HeaderLayout.vue';
 import AddTodo from '@/components/AddTodo.vue';
 import AddTodoBtn from '@/components/AddTodoBtn.vue';
 import BottomSheet from '@/components/common/BottomSheet.vue';
-
 import FormInputWithLabel from '@/components/form/FormInputWithLabel.vue';
-import { usePKManager } from '@/composables/usePKManager';
 
-const addTodoActive = ref(false);
-const setAddTodoActive = () => {
-    addTodoActive.value = !addTodoActive.value;
-};
+import { useTodo } from '@/composables/useTodo';
 
-const todoList = ref([]);
-const completeTodoList = ref([]);
-
-const { incrementPK, getPKValue } = usePKManager();
-
-const handleUpdateTodoList = (todoValue) => {
-    incrementPK();
-
-    const todoItem = {
-        id: `todo${getPKValue()}`,
-        todoValue,
-    };
-
-    todoList.value = [...todoList.value, todoItem];
-};
-
-const handleTodoComplete = (id, todoValue) => {
-    const completeTodoItem = {
-        id,
-        todoValue,
-    };
-
-    completeTodoList.value = [...completeTodoList.value, completeTodoItem];
-    removeTodoItemFromList(id, todoList);
-};
-
-const removeTodoItemFromList = (id, list) => {
-    list.value = list.value.filter((todo) => todo.id !== id);
-};
+const {
+    todoList,
+    addTodoActive,
+    setAddTodoActive,
+    handleUpdateTodoList,
+    handleTodoComplete,
+} = useTodo();
 </script>
 
 <style lang="scss" scoped>
