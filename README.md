@@ -1,35 +1,30 @@
-# vvue
+# 📄 vvue
 
-This template should help get you started developing with Vue 3 in Vite.
+## Table of Contents
 
-## Recommended IDE Setup
+- [Introduction](#introduction)
+- [Wiki for @hyedddi](#wiki-for-hedddi)
+- [Prerequisites](#prerequisites)
+- [About](#about)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Introduction
 
-## Customize configuration
+Vue3 프레임워크를 기반의 TODO 애플리케이션 입니다.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Wiki for @hyedddi
 
-## Project Setup
+- [How to set eslint & prettier configuration in vue3 project?](https://github.com/hyedddi/vvvue/wiki/How-to-set-global-style.scss-in-Vue3-%3F)
+- [How to set global style.scss in Vue3 ?](https://github.com/hyedddi/vvvue/wiki/How-to-set-eslint-&-prettier-configuration-in-vue3-project%3F)
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
+## Prerequisites
 
-```sh
-npm run dev
-```
+### Frontend
+- Vue 3.5.x
+- Vue Router 4.4.x
+- Node 20.15.x
+- Pinia 2.1.x (TBD)
+- axios 1.6.x (TBD)
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## About
+Credit to vvue : @hyedddi, @yongsu-kwon
