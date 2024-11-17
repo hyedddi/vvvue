@@ -7,10 +7,10 @@ const createPKManager = () => {
         },
         getPKValue: () => {
             return pk;
-        }
-    }
-}
+        },
+    };
+};
 
 export const usePKManager = () => {
     return createPKManager();
-}
+};

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Header></Header>
+        <Header />
         <div class="wrap">
             <div class="checkbox-wrap">
                 <AddTodo
@@ -9,10 +9,10 @@
                     :id="todo.id"
                     :todoValue="todo.todoValue"
                     @selected="handleTodoComplete"
-                ></AddTodo>
+                />
             </div>
         </div>
-        <AddTodoBtn @click="setAddTodoActive"></AddTodoBtn>
+        <AddTodoBtn @click="setAddTodoActive" />
         <BottomSheet :activeStatus="addTodoActive">
             <FormInputWithLabel
                 placeholder="일단 입력하고 생각하기"
@@ -35,7 +35,7 @@ import { usePKManager } from '@/composables/usePKManager';
 const addTodoActive = ref(false);
 const setAddTodoActive = () => {
     addTodoActive.value = !addTodoActive.value;
-}
+};
 
 const todoList = ref([]);
 const completeTodoList = ref([]);
@@ -47,7 +47,7 @@ const handleUpdateTodoList = (todoValue) => {
 
     const todoItem = {
         id: `todo${getPKValue()}`,
-        todoValue
+        todoValue,
     };
 
     todoList.value = [...todoList.value, todoItem];
@@ -56,19 +56,17 @@ const handleUpdateTodoList = (todoValue) => {
 const handleTodoComplete = (id, todoValue) => {
     const completeTodoItem = {
         id,
-        todoValue
+        todoValue,
     };
 
     completeTodoList.value = [...completeTodoList.value, completeTodoItem];
     removeTodoItemFromList(id, todoList);
-}
+};
 
 const removeTodoItemFromList = (id, list) => {
-    list.value = list.value.filter(todo => todo.id !== id);
-}
-
+    list.value = list.value.filter((todo) => todo.id !== id);
+};
 </script>
-
 
 <style lang="scss" scoped>
 .container {

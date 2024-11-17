@@ -16,19 +16,19 @@ import { ref } from 'vue';
 const props = defineProps({
     type: {
         type: String,
-        default: 'text'
+        default: 'text',
     },
     placeholder: {
         type: String,
-        default: ''
+        default: '',
     },
     value: {
         type: [Number, String],
-        default: ''
+        default: '',
     },
     araiaLabel: {
         type: String,
-        default: ''
+        default: '',
     },
 });
 
@@ -39,19 +39,19 @@ const emit = defineEmits({
 const inputValue = ref(props.value);
 const handleInputValue = (event) => {
     inputValue.value = event.target.value;
-}
+};
 
 const handleEnter = (event) => {
     // reference: https://weaklion1.tistory.com/27
-    if(event.isComposing) return;
+    if (event.isComposing) return;
 
     emit('typing', inputValue.value);
     clearValue();
-}
+};
 
 const clearValue = () => {
     inputValue.value = '';
-}
+};
 </script>
 
 <style lang="scss" scoped>

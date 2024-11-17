@@ -1,5 +1,8 @@
 <template>
-    <div class="btmsht-pop" :class="props.class">
+    <div
+        class="btmsht-pop"
+        :class="props.class"
+    >
         <div class="text-input-wrap">
             <input
                 type="text"
@@ -16,7 +19,7 @@ import { ref, defineEmits, defineProps } from 'vue';
 
 const textVal = ref({
     id: 0,
-    todoValue: ''
+    todoValue: '',
 });
 
 const emit = defineEmits(['update:addTodo']);
@@ -30,7 +33,7 @@ const addTodo = function (e) {
     textVal.value.todoValue = e.target.value;
     emit('update:addTodo', {
         id: `todo${textVal.value.id}`,
-        todoValue: textVal.value.todoValue
+        todoValue: textVal.value.todoValue,
     });
     textVal.value.id++;
     e.target.value = '';

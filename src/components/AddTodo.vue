@@ -1,8 +1,20 @@
 <template>
     <span class="checkbox">
-        <input type="checkbox" :id="id" class="checkbox" @input.prevent="handleSelected(id, todoValue)"/>
-        <label :for="id" class="todo"></label>
-        <span class="todo-cont" @click="edit">{{ todoValue }}</span>
+        <input
+            type="checkbox"
+            :id="id"
+            class="checkbox"
+            @input.prevent="handleSelected(id, todoValue)"
+        />
+        <label
+            :for="id"
+            class="todo"
+        ></label>
+        <span
+            class="todo-cont"
+            @click="edit"
+            >{{ todoValue }}</span
+        >
     </span>
 </template>
 
@@ -11,21 +23,21 @@ import { defineProps } from 'vue';
 defineProps({
     id: {
         type: String,
-        require: true
+        require: true,
     },
     todoValue: {
         type: String,
-        require: true
-    }
+        require: true,
+    },
 });
 
 const emit = defineEmits({
     selected: (id, todoValue) => typeof id === 'string' && typeof todoValue === 'string',
-})
+});
 
 const handleSelected = (id, todoValue) => {
     emit('selected', id, todoValue);
-}
+};
 </script>
 
 <style lang="scss" scoped>

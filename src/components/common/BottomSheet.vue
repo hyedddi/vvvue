@@ -14,7 +14,7 @@ const props = defineProps({
     activeStatus: {
         type: Boolean,
         default: false,
-    }
+    },
 });
 
 const isActive = computed(() => {

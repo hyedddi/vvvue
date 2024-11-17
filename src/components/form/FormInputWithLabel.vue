@@ -23,23 +23,23 @@ import { ref } from 'vue';
 const props = defineProps({
     labelText: {
         type: String,
-        default: ''
+        default: '',
     },
     type: {
         type: String,
-        default: 'text'
+        default: 'text',
     },
     placeholder: {
         type: String,
-        default: ''
+        default: '',
     },
     initValue: {
         type: [Number, String],
-        default: ''
+        default: '',
     },
     araiaLabel: {
         type: String,
-        default: ''
+        default: '',
     },
 });
 
@@ -49,13 +49,13 @@ const emit = defineEmits({
 
 const inputValue = ref(props.initValue);
 const update = (payload) => {
-    if(!payload.trim()) {
+    if (!payload.trim()) {
         alert('뭐라도 입력해야지 ^^?');
         return;
     }
 
     emit('update', String(payload).trim());
-}
+};
 </script>
 
 <style lang="scss" scoped>

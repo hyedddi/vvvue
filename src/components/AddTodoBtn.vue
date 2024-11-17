@@ -8,7 +8,7 @@
 export default {
     setup() {
         return {};
-    }
+    },
 };
 </script>
 
