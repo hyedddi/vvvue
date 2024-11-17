@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Wiki for @hyedddi](#wiki-for-hedddi)
+- [Wiki for @hyedddi](#wiki-for-hyedddi)
 - [Prerequisites](#prerequisites)
 - [About](#about)
 
