@@ -23,7 +23,7 @@ Vue3 + Vite 환경에서 SCSS를 전역적으로 불러와 사용하기 위해�
       },
       scss: { // 빌드 시 CSS 전처리기에 대한 옵션을 정의
           preprocessorOptions: {
-              scss: {
+              css: {
                   additionalData: '@import "./src/assets/scss/style";'
               }
           }

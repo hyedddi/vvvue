@@ -32,7 +32,7 @@ export default [
                     useTabs: false,
                     tabWidth: 4,
                     trailingComma: 'all',
-                    printWidth: 100,
+                    printWidth: 85,
                     bracketSpacing: true,
                     arrowParens: 'always',
                     endOfLine: 'auto',
