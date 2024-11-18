@@ -2,10 +2,15 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Wiki for @hyedddi](#wiki-for-hyedddi)
-- [Prerequisites](#prerequisites)
-- [About](#about)
+- [📄 vvue](#-vvue)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Wiki for @hyedddi](#wiki-for-hyedddi)
+    - [Configuration](#configuration)
+    - [Javascript](#javascript)
+  - [Prerequisites](#prerequisites)
+    - [Frontend](#frontend)
+  - [About](#about)
 
 ## Introduction
 
@@ -19,6 +24,7 @@ Vue3 프레임워크를 기반의 TODO 애플리케이션 입니다.
 
 ### Javascript
 - [What is closure in javascript?](https://github.com/hyedddi/vvvue/wiki/What-is-closure-in-javascript%3F)
+- [What is floating points in javascript?](https://github.com/hyedddi/vvvue/wiki/What-is-floating-points-in-javascript%3F)
 
 ## Prerequisites
 
