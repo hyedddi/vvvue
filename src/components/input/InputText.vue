@@ -44,12 +44,12 @@ const props = defineProps(['class']);
     position: fixed;
     bottom: 0;
     width: 100%;
-    max-width: 400px;
-    height: 200px;
+    max-width: 40rem;
+    height: 20rem;
     background: #fff;
-    border: 1px solid #ccc;
+    border: 0.1rem solid #ccc;
     border-style: dashed;
-    border-radius: 20px 20px 0 0;
+    border-radius: 2rem 2rem 0 0;
     transition: transform 0.5s ease-in-out;
     z-index: 100;
 }
@@ -63,21 +63,21 @@ const props = defineProps(['class']);
 }
 
 .text-input-wrap {
-    padding: 0 0 20px 0;
+    padding: 0 0 2rem 0;
 }
 
 .text {
     display: block;
-    width: calc(100% - 40px);
-    height: 40px;
-    padding: 5px 10px;
-    margin: 20px 20px 0 20px;
-    border: 1px solid #333;
-    border-radius: 10px;
-    font-size: 18px;
+    width: calc(100% - 4rem);
+    height: 4rem;
+    padding: 0.5rem 1rem;
+    margin: 2rem 2rem 0 2rem;
+    border: 0.1rem solid $color-333;
+    border-radius: 1rem;
+    font-size: 1.8rem;
 
     ::placeholder {
-        color: #b6b6b6;
+        color: $color-acac;
     }
 }
 </style>

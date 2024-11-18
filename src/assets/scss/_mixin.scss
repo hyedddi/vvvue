@@ -1,6 +1,23 @@
-@mixin flex-row($gap) {
+@mixin blocks {
+  display: block;
+}
+
+@mixin none {
+  display: none;
+}
+
+@mixin flex-row($gap, $direct) {
   display: flex;
-  flex-direction: row;
+  flex-direction: $direct;
   gap: $gap;
   @content;
 }
+
+@mixin grid($gap, $direct) {
+  display: grid;
+  flex-direction: $direct;
+  gap: $gap;
+  @content;
+}
+
+

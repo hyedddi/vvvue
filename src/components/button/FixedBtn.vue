@@ -4,31 +4,25 @@
     </div>
 </template>
 
-<script>
-export default {
-    setup() {
-        return {};
-    }
-};
-</script>
+<script></script>
 
 <style lang="scss" scoped>
 .add-todo-btn {
     position: fixed;
-    left: calc(50% + 100px);
-    bottom: 10vw;
+    left: calc(50% + 12.5rem);
+    bottom: 10vh;
     transform: translateX(-50%);
 
     button {
         display: block;
-        width: 50px;
-        height: 50px;
+        width: 5rem;
+        height: 5rem;
         color: #fff;
         background: #505a93;
         border: none;
         border-radius: 100%;
         outline: none;
-        font-size: 30px;
+        font-size: 3rem;
     }
 }
 </style>

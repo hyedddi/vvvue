@@ -13,3 +13,16 @@ body {
 #app {
     height: 100%;
 }
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.wrap {
+    height: 100%;
+    padding-bottom: 8rem;
+}

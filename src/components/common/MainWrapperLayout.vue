@@ -2,12 +2,6 @@
     <main class="main"></main>
 </template>
 
-<script>
-export default {
-    setup() {
-        return {};
-    }
-};
-</script>
+<script></script>
 
 <style lang="scss" scoped></style>

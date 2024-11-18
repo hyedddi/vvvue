@@ -23,29 +23,29 @@ const props = defineProps({
 <style lang="scss" scoped>
 .checkbox {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 20px;
+    align-items: $align-c;
+    gap: 1.6rem;
+    font-size: 2rem;
 
     input[type='checkbox'] {
-        display: none;
+        @include none;
     }
 
     input[type='checkbox'] + label {
         display: block;
         flex-shrink: 0;
-        width: 20px;
-        height: 20px;
+        width: 2rem;
+        height: 2rem;
         background-image: url(/src/assets/images/checkbox.png);
         background-repeat: no-repeat;
-        background-position: left center;
+        background-position: $align-l $align-c;
         background-size: cover;
         content: '';
     }
 
     input[type='checkbox']:checked + label {
         background-image: url(/src/assets/images/checkbox.png);
-        background-position: right center;
+        background-position: $align-r $align-c;
     }
 
     .todo-cont {
@@ -56,9 +56,5 @@ const props = defineProps({
     input[type='checkbox']:checked ~ .todo-cont {
         text-decoration: line-through;
     }
-}
-
-.todo.cmplt {
-    text-decoration: line-through;
 }
 </style>
