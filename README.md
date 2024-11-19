@@ -12,6 +12,7 @@
     - [Vue3](#vue3)
   - [Prerequisites](#prerequisites)
     - [Frontend](#frontend)
+    - [Backend](#backend)
   - [About](#about)
 
 ## Introduction
@@ -47,6 +48,12 @@ Vue3 프레임워크를 기반의 TODO 애플리케이션 입니다.
 - Node 20.15.x
 - Pinia 2.1.x (TBD)
 - axios 1.6.x (TBD)
+
+### Backend
+
+- NestJS 10.4.x
+- NodeJS 20.15.x
+- Typescript
 
 ## About
 
