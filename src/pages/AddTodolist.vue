@@ -1,9 +1,8 @@
 <template>
-    <Header />
     <MainWrapper>
         <div class="todolist">
             <div class="checkbox-wrap">
-                <InputCheckbox
+                <InputCheckbox 
                     v-for="(todo, index) in todoList"
                     :key="index"
                     :id="todo.id"
@@ -12,32 +11,36 @@
             </div>
         </div>
     </MainWrapper>
-    <fixedBtn @click="activeBtnHandle"></fixedBtn>
-    <DimLayer v-if="activeStatus"></DimLayer>
-    <InputText
+    <FixedBtn @click="active"></FixedBtn>
+    <DimLayer v-if="!active">
+        <BottomSheet></BottomSheet>
+    </DimLayer>
+    <!-- <InputText
         :class="{ active: addTodoActive, unactive: !addTodoActive }"
         @update:addTodo="handleUpdateTodoList"
-    ></InputText>
-
+    ></InputText> -->
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import MainWrapper from '@/components/common/MainWrapperLayout.vue';
-import Header from '@/components/common/HeaderLayout.vue';
+
 import InputCheckbox from '@/components/input/InputCheckbox.vue';
 import InputText from '@/components/input/InputText.vue';
 import DimLayer from '@/components/common/DimLayer.vue';
-import fixedBtn from '@/components/button/FixedBtn.vue';
+import BottomSheet from '@/components/common/BottomSheet.vue';
+import FixedBtn from '@/components/button/FixedBtn.vue';
+
+import { useActiveStatus } from '@/composables/useActiveStatus';
 
 const todoList = ref([]);
 const handleUpdateTodoList = (item) => {
     todoList.value.push(item);
 };
 
+const active = useActiveStatus();
 
-const activeStatus = ref(false);
-const activeBtnHandle = () => activeStatus.value = !activeStatus.value;
+
 
 </script>
 

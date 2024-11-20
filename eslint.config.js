@@ -11,6 +11,7 @@ export default [
             prettier: pluginPrettier, // 추가
         },
         rules: {
+            'vue/no-multiple-template-root': 'off',
             'no-console': 'off',
             'vue/html-self-closing': [
                 'warn',

@@ -1,13 +1,11 @@
 <template>
-    <div class="btmsht-pop" :class="props.class">
-        <div class="text-input-wrap">
-            <input
-                type="text"
-                class="text"
-                placeholder="일단 입력하고 생각하기"
-                @keyup.enter="addTodo"
-            />
-        </div>
+    <div class="text-input-wrap">
+        <input
+            type="text"
+            class="text"
+            placeholder="일단 입력하고 생각하기"
+            @keyup.enter="addTodo"
+        />
     </div>
 </template>
 
@@ -40,28 +38,6 @@ const props = defineProps(['class']);
 </script>
 
 <style lang="scss" scoped>
-.btmsht-pop {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: 40rem;
-    height: 20rem;
-    background: #fff;
-    border: 0.1rem solid #ccc;
-    border-style: dashed;
-    border-radius: 2rem 2rem 0 0;
-    transition: transform 0.5s ease-in-out;
-    z-index: 100;
-}
-
-.btmsht-pop.unactive {
-    transform: translateY(100%);
-}
-
-.btmsht-pop.active {
-    transform: translateY(0);
-}
-
 .text-input-wrap {
     padding: 0 0 2rem 0;
 }

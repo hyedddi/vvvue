@@ -6,13 +6,13 @@
 
 <style lang="scss" scoped>
 header {
-    height: 6rem;
+    height: 5rem;
     color: $color-333;
     border-bottom: 0.1rem solid $color-eee;
     text-align: $align-c;
 
     h1 {
-        line-height: 6rem;
+        line-height: 5rem;
         font-size: 2.2rem;
         font-weight: $font-w-semibold;
     }
