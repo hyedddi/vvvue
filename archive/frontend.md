@@ -13,6 +13,9 @@
 - [폰트 성능 최적화를 위한 궁극적인 가이드](https://ykss.netlify.app/translation/the_ultimate_guide_to_font_performance_optimization/?utm_source=substack&utm_medium=email)
 - [Web Browser Engineering](https://browser.engineering/index.html?utm_source=oneoneone)
 
+## Browser
+
+- [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
 
 ## Vue
 
