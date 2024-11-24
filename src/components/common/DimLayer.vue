@@ -1,10 +1,22 @@
 <template>
-    <div class="dim-layer">
+    <div
+        class="dim-layer"
+        v-if="props.dimlayerActive"
+    >
         <slot></slot>
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps({
+    dimlayerActive: {
+        type: Boolean,
+        default: false,
+    },
+});
+</script>
 
 <style lang="scss" scoped>
 .dim-layer {
@@ -15,7 +27,7 @@
     width: 100%;
     max-width: 400px;
     height: 100%;
-    background: $color-d-0004c;
-    z-index: 7220;
+    background: $color-dim;
+    z-index: 6000;
 }
 </style>

@@ -1,43 +1,76 @@
 <template>
-    <div class="btmsht-pop" :class="props.class">
+    <div
+        class="btmsht-pop"
+        :class="btmshtActive"
+    >
         <div class="btmsht-cont">
-            <slot></slot>
+            <slot name="content"></slot>
         </div>
-        <div class="btmsht-btn">
-            <button type="button" class="btn-cancel">취소</button>
-            <button type="button" class="btn-confirm">확인</button>
-            <button type="button" class="btn-close">닫기</button>
+        <div class="btmsht-btn-wrap">
+            <CommonBtn />
         </div>
     </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { computed, defineProps } from 'vue';
 
-const props = defineProps(['class']);
+import CommonBtn from '@/components/button/CommonBtn.vue';
 
+const props = defineProps({
+    btmshtActive: {
+        type: Boolean,
+        default: false,
+    },
+    btmshtBtnSet: {
+        text: {
+            type: String,
+            default: '확인',
+        },
+        class: {
+            type: String,
+            default: 'btn-confirm',
+        },
+        length: {
+            type: Number,
+            default: 1,
+        },
+    },
+});
+
+const btmshtActive = computed(() => {
+    return props.btmshtActive ? 'active' : 'unactive';
+});
 </script>
 
-<style>
+<style lang="scss">
 .btmsht-pop {
     position: fixed;
     bottom: 0;
     width: 100%;
     max-width: 40rem;
-    height: 20rem;
-    background: #fff;
-    border: 0.1rem solid #ccc;
-    border-style: dashed;
-    border-radius: 2rem 2rem 0 0;
-    transition: transform 0.5s ease-in-out;
-    z-index: 100;
-}
-
-.btmsht-pop.unactive {
+    height: 25rem;
+    background: $color-fff;
+    border: 0.1rem solid $color-ccc;
+    border-radius: 3rem 3rem 0 0;
     transform: translateY(100%);
+    transition: transform 0.3s linear;
+    z-index: 7000;
+
+    &.unactive {
+        transform: translateY(100%);
+    }
+
+    &.active {
+        transform: translateY(0);
+    }
 }
 
-.btmsht-pop.active {
-    transform: translateY(0);
+.btmsht-btn-wrap {
+    display: flex;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0 1.6rem;
+    margin: 2rem 0;
 }
 </style>

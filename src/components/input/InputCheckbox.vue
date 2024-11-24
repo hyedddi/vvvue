@@ -1,22 +1,34 @@
 <template>
     <span class="checkbox">
-        <input type="checkbox" :id="props.id" class="checkbox" />
-        <label :for="props.id" class="todo"></label>
-        <span class="todo-cont" @click="edit">{{ props.todoValue }}</span>
+        <input
+            type="checkbox"
+            :id="props.id"
+            class="checkbox"
+        />
+        <label
+            :for="props.id"
+            class="todo"
+        ></label>
+        <span
+            class="todo-cont"
+            @click="edit"
+            >{{ props.todoValue }}</span
+        >
     </span>
 </template>
 
 <script setup>
+//v-model?
 import { defineProps } from 'vue';
 const props = defineProps({
     id: {
         type: String,
-        require: true
+        require: true,
     },
     todoValue: {
         type: String,
-        require: true
-    }
+        require: true,
+    },
 });
 </script>
 

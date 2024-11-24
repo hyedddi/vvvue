@@ -6,13 +6,8 @@ const router = createRouter({
         {
             path: '/',
             name: 'todolist',
-            component: () => import('@/pages/AddTodolist.vue')
+            component: () => import('@/pages/AddTodolist.vue'),
         },
-        {
-            path: '/test',
-            name: 'test',
-            component: () => import('../components/test.vue')
-        }
-    ]
+    ],
 });
 export default router;
